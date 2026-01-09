@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | MVN Aero One</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        goldA: "#cea376",
+                        goldB: "#d7ad38",
+                        ink: "#0b0b0b",
+                    },
+                    boxShadow: {
+                        glow: "0 0 0 1px rgba(206,163,118,0.35), 0 10px 30px rgba(0,0,0,0.45)",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .bg-luxe {
+            background:
+                radial-gradient(60rem 60rem at 10% 10%, rgba(215, 173, 56, 0.10), transparent 60%),
+                radial-gradient(40rem 40rem at 90% 30%, rgba(206, 163, 118, 0.12), transparent 55%),
+                linear-gradient(to bottom, #000000, #0b0b0b 40%, #000000);
+        }
+
+        .grid-overlay {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white antialiased h-screen flex flex-col">
+
+    <!-- Top bar (Simplified) -->
+    <header class="border-b border-white/10 bg-black/60 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="h-9 w-9 rounded-xl bg-goldA/15 ring-1 ring-goldA/40 flex items-center justify-center">
+                        <span class="text-goldB font-extrabold tracking-tight">MVN</span>
+                    </div>
+                    <div class="leading-tight">
+                        <div class="font-semibold tracking-wide">Aero One</div>
+                        <div class="text-xs text-white/60">Gurugram • Sector 37D</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="bg-luxe relative flex-grow flex items-center justify-center overflow-hidden">
+        <div class="grid-overlay absolute inset-0 pointer-events-none opacity-60"></div>
+
+        <div class="relative z-10 text-center px-4 max-w-2xl mx-auto">
+            <div
+                class="w-20 h-20 bg-goldA/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-goldA/20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-goldB" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Thank You</h1>
+            <p class="text-white/70 text-lg leading-relaxed mb-8">
+                We have received your enquiry. One of our property consultants will get in touch with you shortly to
+                assist you further with MVN Aero One.
+            </p>
+
+            <a href="index.html"
+                class="inline-flex items-center gap-2 rounded-xl bg-goldB px-6 py-3 font-semibold text-black shadow-glow hover:brightness-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to Home
+            </a>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 bg-black py-6 text-center text-xs text-white/40">
+        &copy; 2024 MVN Aero One. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

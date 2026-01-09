@@ -4,10 +4,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aero One, Gurugram | Luxury Residences on Dwarka Expressway</title>
+    <title>MVN Aero One | Sector 37D, Gurugram</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <script>
         tailwind.config = {
@@ -21,6 +27,9 @@
                     boxShadow: {
                         glow: "0 0 0 1px rgba(206,163,118,0.35), 0 10px 30px rgba(0,0,0,0.45)",
                     },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                    }
                 },
             },
         };
@@ -46,6 +55,34 @@
         .text-balance {
             text-wrap: balance;
         }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b0b0b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cea376;
+        }
+
+        /* Swiper Customization */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #d7ad38 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #d7ad38 !important;
+        }
     </style>
 </head>
 
@@ -57,7 +94,7 @@
                 <!-- Brand -->
                 <a href="#top" class="flex items-center gap-3">
                     <div class="h-9 w-9 rounded-xl bg-goldA/15 ring-1 ring-goldA/40 flex items-center justify-center">
-                        <span class="text-goldB font-extrabold tracking-tight">A1</span>
+                        <span class="text-goldB font-extrabold tracking-tight">MVN</span>
                     </div>
                     <div class="leading-tight">
                         <div class="font-semibold tracking-wide">Aero One</div>
@@ -69,14 +106,19 @@
                 <nav class="hidden md:flex items-center gap-8 text-sm">
                     <a class="hover:text-goldB transition" href="#highlights">Highlights</a>
                     <a class="hover:text-goldB transition" href="#amenities">Amenities</a>
+                    <a class="hover:text-goldB transition" href="#floor-plans">Floor Plans</a>
+                    <a class="hover:text-goldB transition" href="#price-list">Price List</a>
                     <a class="hover:text-goldB transition" href="#location">Location</a>
                     <a class="hover:text-goldB transition" href="#gallery">Gallery</a>
                     <a class="hover:text-goldB transition" href="#faq">FAQ</a>
                 </nav>
 
                 <div class="hidden md:flex items-center gap-3">
+                    <a href="tel:+919999999999" class="text-sm font-semibold hover:text-goldB transition mr-2">
+                        <i class="fa-solid fa-phone mr-1"></i> +91 99999 99999
+                    </a>
                     <a href="#contact"
-                        class="rounded-xl bg-goldB px-4 py-2 text-sm font-semibold text-black shadow-glow hover:brightness-110 transition">
+                        class="hidden sm:inline-flex rounded-xl bg-goldB px-4 py-2 text-sm font-semibold text-black shadow-glow hover:brightness-110 transition">
                         Enquire Now
                     </a>
                 </div>
@@ -85,12 +127,7 @@
                 <button id="menuBtn"
                     class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 p-2 hover:bg-white/10 transition"
                     aria-label="Open menu" aria-expanded="false">
-                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M3 5h14a1 1 0 100-2H3a1 1 0 000 2zm14 4H3a1 1 0 000 2h14a1 1 0 100-2zm0 6H3a1 1 0 000 2h14a1 1 0 100-2z"
-                            clip-rule="evenodd" />
-                    </svg>
+                    <i class="fa-solid fa-bars text-lg"></i>
                 </button>
             </div>
 
@@ -99,6 +136,8 @@
                 <div class="mt-2 grid gap-2 rounded-2xl border border-white/10 bg-white/5 p-3">
                     <a class="rounded-xl px-3 py-2 hover:bg-white/10" href="#highlights">Highlights</a>
                     <a class="rounded-xl px-3 py-2 hover:bg-white/10" href="#amenities">Amenities</a>
+                    <a class="rounded-xl px-3 py-2 hover:bg-white/10" href="#floor-plans">Floor Plans</a>
+                    <a class="rounded-xl px-3 py-2 hover:bg-white/10" href="#price-list">Price List</a>
                     <a class="rounded-xl px-3 py-2 hover:bg-white/10" href="#location">Location</a>
                     <a class="rounded-xl px-3 py-2 hover:bg-white/10" href="#gallery">Gallery</a>
                     <a class="rounded-xl px-3 py-2 hover:bg-white/10" href="#faq">FAQ</a>
@@ -115,22 +154,21 @@
 
         <section class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
             <div class="grid lg:grid-cols-2 gap-10 items-center">
-                <div>
+                <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
                     <div
                         class="inline-flex items-center gap-2 rounded-full border border-goldA/35 bg-goldA/10 px-4 py-2 text-xs text-goldA">
-                        <span class="h-2 w-2 rounded-full bg-goldB"></span>
-                        Premium Residences • Dwarka Expressway Corridor
+                        <span class="h-2 w-2 rounded-full bg-goldB animate-pulse"></span>
+                        Ultra-Luxury Residences • Dwarka Expressway
                     </div>
 
                     <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-balance">
-                        A statement address in <span class="text-goldB">Gurugram</span> —
-                        crafted for elevated living.
+                        MVN <span class="text-goldB">Aero One</span> —
+                        Redefining Luxury in Gurugram
                     </h1>
 
                     <p class="mt-5 text-white/75 leading-relaxed text-balance">
-                        Discover expansive residences in Sector 37D with a refined lifestyle proposition:
-                        generous proportions, modern comforts, and a curated amenity experience designed for
-                        privacy, wellness, and everyday convenience.
+                        Experience the pinnacle of urban living in Sector 37D. Featuring spacious 5.5 BHK apartments &
+                        penthouses with 360° panoramic views, designed by Hafeez Contractor.
                     </p>
 
                     <div class="mt-8 flex flex-col sm:flex-row gap-3">
@@ -145,64 +183,77 @@
                     </div>
 
                     <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                            <div class="text-goldA text-xs">Location</div>
-                            <div class="mt-1 font-semibold">Sector 37D, Gurugram</div>
-                            <div class="text-xs text-white/55 mt-1">Village Harsaru</div>
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-goldA/30">
+                            <div class="text-goldA text-xs"><i class="fa-solid fa-building-user mr-1"></i> Unit Type
+                            </div>
+                            <div class="mt-1 font-semibold">5.5 BHK</div>
+                            <div class="text-xs text-white/55 mt-1">Simplex & Duplex</div>
                         </div>
-                        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                            <div class="text-goldA text-xs">Connectivity</div>
-                            <div class="mt-1 font-semibold">Dwarka Expressway</div>
-                            <div class="text-xs text-white/55 mt-1">Growth Corridor</div>
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-goldA/30">
+                            <div class="text-goldA text-xs"><i class="fa-solid fa-ruler-combined mr-1"></i> Size Range
+                            </div>
+                            <div class="mt-1 font-semibold">6300 - 13500 Sq. Ft.</div>
+                            <div class="text-xs text-white/55 mt-1">Expansive Layouts</div>
                         </div>
-                        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 col-span-2 sm:col-span-1">
-                            <div class="text-goldA text-xs">Designed By</div>
+                        <div
+                            class="rounded-2xl border border-white/10 bg-white/5 p-4 col-span-2 sm:col-span-1 transition hover:border-goldA/30">
+                            <div class="text-goldA text-xs"><i class="fa-solid fa-pen-nib mr-1"></i> Architect</div>
                             <div class="mt-1 font-semibold">Hafeez Contractor</div>
-                            <div class="text-xs text-white/55 mt-1">Project architect</div>
+                            <div class="text-xs text-white/55 mt-1">Iconic Design</div>
                         </div>
                     </div>
 
                     <p class="mt-6 text-xs text-white/45">
-                        Note: Details shown are indicative and should be verified with official documentation / RERA
-                        disclosures.
+                        <i class="fa-solid fa-certificate text-goldB mr-1"></i> RERA Reg: GGM/889/621/2024/116. |
+                        Starting Price: ₹19.84 Cr*
                     </p>
                 </div>
 
                 <!-- Hero Media Card -->
-                <div class="relative">
+                <div
+                    class="relative animate-on-scroll opacity-0 translate-x-8 transition-all duration-1000 ease-out delay-200">
                     <div class="rounded-3xl border border-goldA/25 bg-white/5 p-4 shadow-glow">
-                        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-black">
+                        <div
+                            class="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-black group relative">
                             <!-- Replace with your real project render -->
-                            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80"
-                                alt="Luxury residence exterior (placeholder)"
-                                class="h-full w-full object-cover opacity-90" loading="lazy" />
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1500&auto=format&fit=crop"
+                                alt="MVN Aero One Exterior"
+                                class="h-full w-full object-cover opacity-90 transition duration-700 group-hover:scale-110"
+                                loading="lazy" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                            </div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-goldB text-black text-xs font-bold px-2 py-1 rounded">Phase 1 Sold
+                                    Out</span>
+                            </div>
                         </div>
 
                         <div class="mt-4 grid sm:grid-cols-3 gap-3">
                             <div class="rounded-2xl border border-white/10 bg-black/40 p-3">
                                 <div class="text-xs text-goldA">Ceiling Height</div>
-                                <div class="font-semibold">~13.5 ft*</div>
+                                <div class="font-semibold">13.5 ft</div>
                             </div>
                             <div class="rounded-2xl border border-white/10 bg-black/40 p-3">
-                                <div class="text-xs text-goldA">RERA</div>
-                                <div class="font-semibold">HRERA Listed*</div>
+                                <div class="text-xs text-goldA">Clubhouse</div>
+                                <div class="font-semibold">80,000 Sq. Ft.</div>
                             </div>
                             <div class="rounded-2xl border border-white/10 bg-black/40 p-3">
                                 <div class="text-xs text-goldA">Lifestyle</div>
-                                <div class="font-semibold">Rooftop + Club</div>
+                                <div class="font-semibold">Jacuzzi Decks</div>
                             </div>
                         </div>
 
                         <div class="mt-4 flex items-center justify-between text-xs text-white/60">
-                            <span>*As per project marketing / disclosures.</span>
+                            <span>*Possession starting 2029</span>
                             <a href="#contact" class="text-goldB hover:underline">Request details</a>
                         </div>
                     </div>
 
-                    <div class="absolute -top-6 -right-6 hidden lg:block">
-                        <div class="rounded-3xl border border-goldB/30 bg-goldB/10 p-4">
-                            <div class="text-xs text-goldB">Prime Corridor</div>
-                            <div class="text-lg font-bold">Dwarka Expressway</div>
+                    <div class="absolute -top-6 -right-6 hidden lg:block animate-bounce-slow">
+                        <div class="rounded-3xl border border-goldB/30 bg-goldB/10 p-4 backdrop-blur-sm">
+                            <div class="text-xs text-goldB">Prime Location</div>
+                            <div class="text-lg font-bold"><i class="fa-solid fa-location-dot mr-1"></i> Sector 37D
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -211,59 +262,64 @@
 
         <!-- Highlights -->
         <section id="highlights" class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
-            <div class="flex items-end justify-between gap-4">
+            <div
+                class="flex items-end justify-between gap-4 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-extrabold">Project Highlights</h2>
                     <p class="mt-2 text-white/70 max-w-2xl">
-                        Designed for discerning buyers seeking spacious planning, premium finishes, and strong
-                        connectivity.
+                        A masterpiece of architecture offering an unmatchable lifestyle on the Dwarka Expressway.
                     </p>
                 </div>
                 <a href="#contact" class="hidden sm:inline-flex text-sm font-semibold text-goldB hover:underline">
-                    Book a site visit →
+                    Book a site visit <i class="fa-solid fa-arrow-right ml-1"></i>
                 </a>
             </div>
 
             <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition">
-                    <div class="text-goldA font-semibold">Signature architecture</div>
+                <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition hover:-translate-y-1 duration-300 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+                    <div class="text-goldA font-semibold"><i class="fa-solid fa-panorama mr-2"></i> Panoramic Views
+                    </div>
                     <p class="mt-2 text-white/70 text-sm leading-relaxed">
-                        A modern façade with thoughtful planning and a strong emphasis on privacy, ventilation, and
-                        light.
+                        270° to 360° panoramic views from every residence, ensuring breathable living spaces.
                     </p>
                 </div>
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition">
-                    <div class="text-goldA font-semibold">Large-format living</div>
+                <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition hover:-translate-y-1 duration-300 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-200">
+                    <div class="text-goldA font-semibold"><i class="fa-solid fa-couch mr-2"></i> Grand Interiors</div>
                     <p class="mt-2 text-white/70 text-sm leading-relaxed">
-                        Expansive layouts aimed at luxury buyers who value space for family living, hosting, and
-                        work-from-home.
+                        Italian marble flooring, VRV air conditioning, and signature Cucina kitchens in every unit.
                     </p>
                 </div>
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition">
-                    <div class="text-goldA font-semibold">Premium amenity layer</div>
+                <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition hover:-translate-y-1 duration-300 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-300">
+                    <div class="text-goldA font-semibold"><i class="fa-solid fa-champagne-glasses mr-2"></i> World-Class
+                        Club</div>
                     <p class="mt-2 text-white/70 text-sm leading-relaxed">
-                        A curated mix of wellness, recreation, and social spaces—built to complement a modern lifestyle.
+                        A massive 80,000 sq. ft. clubhouse managed by a 5-star hospitality partner.
                     </p>
                 </div>
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition">
-                    <div class="text-goldA font-semibold">Expressway advantage</div>
+                <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition hover:-translate-y-1 duration-300 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+                    <div class="text-goldA font-semibold"><i class="fa-solid fa-road mr-2"></i> Direct Connectivity
+                    </div>
                     <p class="mt-2 text-white/70 text-sm leading-relaxed">
-                        Positioned on the Dwarka Expressway growth corridor for improved access to key city
-                        destinations.
+                        Direct vehicle entry from the Dwarka Expressway and 15 mins to IGI Airport.
                     </p>
                 </div>
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition">
-                    <div class="text-goldA font-semibold">Investor-ready micro-market</div>
+                <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition hover:-translate-y-1 duration-300 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-200">
+                    <div class="text-goldA font-semibold"><i class="fa-solid fa-leaf mr-2"></i> Green Living</div>
                     <p class="mt-2 text-white/70 text-sm leading-relaxed">
-                        Sector 37D continues to see infrastructure-led interest, supporting both end-use and investment
-                        goals.
+                        IGBC Gold Certified project with advanced air purification systems for clean air.
                     </p>
                 </div>
-                <div class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition">
-                    <div class="text-goldA font-semibold">RERA listed project</div>
+                <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-goldA/35 transition hover:-translate-y-1 duration-300 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-300">
+                    <div class="text-goldA font-semibold"><i class="fa-solid fa-hot-tub-person mr-2"></i> Private
+                        Amenities</div>
                     <p class="mt-2 text-white/70 text-sm leading-relaxed">
-                        Project appears on Haryana RERA search with location details and promoter listing for buyer
-                        verification.
+                        Apartments feature private jacuzzis on open balconies and dedicated lift lobbies.
                     </p>
                 </div>
             </div>
@@ -273,392 +329,657 @@
     <!-- Amenities -->
     <section id="amenities" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div class="grid lg:grid-cols-2 gap-10 items-start">
-            <div>
-                <h2 class="text-2xl sm:text-3xl font-extrabold">Amenities that feel intentional</h2>
+            <div class="animate-on-scroll opacity-0 translate-x-[-20px] transition-all duration-1000 ease-out">
+                <h2 class="text-2xl sm:text-3xl font-extrabold">Unrivaled Amenities</h2>
                 <p class="mt-3 text-white/70 leading-relaxed">
-                    A balanced mix of wellness, leisure, and community spaces—so your everyday routine feels elevated.
+                    Elevate every moment with amenities designed for the elite. From business to leisure, everything is
+                    at your doorstep.
                 </p>
 
                 <div class="mt-6 grid sm:grid-cols-2 gap-4">
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <div class="font-semibold text-goldA">Wellness & Fitness</div>
-                        <p class="mt-1 text-sm text-white/70">Gym, yoga decks, spa-inspired zones, jogging paths.</p>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
+                        <div class="font-semibold text-goldA"><i class="fa-solid fa-hotel mr-1"></i> Grand Arrival</div>
+                        <p class="mt-1 text-sm text-white/70">Triple-height entrance lobby & smart home automation.</p>
                     </div>
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <div class="font-semibold text-goldA">Recreation</div>
-                        <p class="mt-1 text-sm text-white/70">Swimming pool, sports areas, indoor games and lounges.</p>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
+                        <div class="font-semibold text-goldA"><i class="fa-solid fa-person-swimming mr-1"></i> Aquatic
+                        </div>
+                        <p class="mt-1 text-sm text-white/70">7 swimming pools including a dedicated kids water park.
+                        </p>
                     </div>
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <div class="font-semibold text-goldA">Family Spaces</div>
-                        <p class="mt-1 text-sm text-white/70">Kids play areas, green pockets, calm seating decks.</p>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
+                        <div class="font-semibold text-goldA"><i class="fa-solid fa-dumbbell mr-1"></i> Fitness</div>
+                        <p class="mt-1 text-sm text-white/70">80,000 sq. ft. clubhouse with world-class gym & spa.</p>
                     </div>
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                        <div class="font-semibold text-goldA">Safety & Convenience</div>
-                        <p class="mt-1 text-sm text-white/70">24×7 security, CCTV readiness, dedicated services.</p>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 transition">
+                        <div class="font-semibold text-goldA"><i class="fa-solid fa-wind mr-1"></i> Comfort</div>
+                        <p class="mt-1 text-sm text-white/70">VRV air conditioning & treated fresh air system.</p>
                     </div>
                 </div>
 
                 <div class="mt-8 rounded-3xl border border-goldA/25 bg-goldA/10 p-5">
-                    <div class="text-sm text-goldB font-semibold">Pro tip for buyers</div>
+                    <div class="text-sm text-goldB font-semibold"><i class="fa-solid fa-star mr-1"></i> Architectural
+                        Marvel</div>
                     <p class="mt-1 text-sm text-white/70">
-                        Ask for the latest RERA details, floor plans, and payment schedule. Verify all specifics before
-                        booking.
+                        Designed by Hafeez Contractor with 13.5 ft. ceiling heights and expansive layouts.
                     </p>
                 </div>
             </div>
 
-            <div class="rounded-3xl border border-white/10 bg-white/5 p-5 shadow-glow">
-                <div class="aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black">
+            <div
+                class="rounded-3xl border border-white/10 bg-white/5 p-5 shadow-glow animate-on-scroll opacity-0 translate-x-[20px] transition-all duration-1000 ease-out delay-200">
+                <div class="aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black group">
                     <!-- Replace with amenities image -->
-                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1400&q=80"
-                        alt="Luxury amenities (placeholder)" class="h-full w-full object-cover" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1500&auto=format&fit=crop"
+                        alt="Luxury interior"
+                        class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                        loading="lazy" />
                 </div>
 
                 <div class="mt-5 grid grid-cols-2 gap-3 text-sm">
                     <div class="rounded-2xl border border-white/10 bg-black/40 p-4">
-                        <div class="text-goldA font-semibold">Rooftop zones</div>
-                        <div class="text-white/70 mt-1">Social & sunset decks</div>
+                        <div class="text-goldA font-semibold">Sky Deck</div>
+                        <div class="text-white/70 mt-1">Observatory views</div>
                     </div>
                     <div class="rounded-2xl border border-white/10 bg-black/40 p-4">
-                        <div class="text-goldA font-semibold">Club experience</div>
-                        <div class="text-white/70 mt-1">Indoor + outdoor mix</div>
-                    </div>
-                    <div class="rounded-2xl border border-white/10 bg-black/40 p-4">
-                        <div class="text-goldA font-semibold">Green pockets</div>
-                        <div class="text-white/70 mt-1">Calm landscaped areas</div>
-                    </div>
-                    <div class="rounded-2xl border border-white/10 bg-black/40 p-4">
-                        <div class="text-goldA font-semibold">Premium finishes</div>
-                        <div class="text-white/70 mt-1">Refined material palette</div>
+                        <div class="text-goldA font-semibold">Pet Park</div>
+                        <div class="text-white/70 mt-1">Dedicated zone</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Location -->
-    <section id="location" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10">
-            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-                <div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold">Location Advantage</h2>
-                    <p class="mt-2 text-white/70 max-w-2xl">
-                        Sector 37D (Village Harsaru), Gurugram — aligned with the Dwarka Expressway corridor for
-                        improved connectivity.
-                    </p>
-                </div>
-                <a href="#contact"
-                    class="rounded-xl bg-goldB px-5 py-3 font-semibold text-black shadow-glow hover:brightness-110 transition">
-                    Request Location Map
-                </a>
-            </div>
+    <!-- Floor Plans -->
+    <section id="floor-plans" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+            <h2 class="text-3xl sm:text-4xl font-extrabold">Exquisite Floor Plans</h2>
+            <p class="mt-4 text-white/70 max-w-2xl mx-auto">
+                Discover the grandeur of spaciously designed 5.5 BHK residences and signature penthouses.
+            </p>
+        </div>
 
-            <div class="mt-8 grid lg:grid-cols-3 gap-5">
-                <div class="rounded-2xl border border-white/10 bg-black/30 p-5">
-                    <div class="text-goldA font-semibold">Key access</div>
-                    <p class="mt-2 text-sm text-white/70">
-                        Positioned for smoother travel to major city zones and business hubs as the corridor develops.
-                    </p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-black/30 p-5">
-                    <div class="text-goldA font-semibold">Neighborhood growth</div>
-                    <p class="mt-2 text-sm text-white/70">
-                        Sector 37D continues to be a focus area for planned infrastructure and supporting development.
-                    </p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-black/30 p-5">
-                    <div class="text-goldA font-semibold">Verification</div>
-                    <p class="mt-2 text-sm text-white/70">
-                        Check Haryana RERA listing for project location and promoter information before you proceed.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Map placeholder -->
+        <div class="grid md:grid-cols-3 gap-8">
             <div
-                class="mt-8 aspect-[16/6] rounded-2xl overflow-hidden border border-white/10 bg-black flex items-center justify-center text-white/60">
-                <div class="text-center px-6">
-                    <div class="text-goldB font-semibold">Embed Google Map here</div>
-                    <div class="text-sm mt-1">Replace this block with an iframe of your pinned location.</div>
+                class="rounded-3xl border border-white/10 bg-white/5 overflow-hidden transition hover:border-goldA/40 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100">
+                <div
+                    class="aspect-[4/5] bg-black/40 flex items-center justify-center p-8 grayscale hover:grayscale-0 transition duration-500">
+                    <i class="fa-solid fa-drafting-compass text-6xl text-goldA/20"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold">5.5 BHK Simplex</h3>
+                    <p class="mt-2 text-sm text-white/60">270° Panoramic Views • Expansive Layout</p>
+                    <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="font-semibold">~6,300 Sq. Ft.</span>
+                        <a href="#contact" class="text-goldB text-sm font-bold hover:underline">Request Layout</a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="relative rounded-3xl border border-goldA/30 bg-goldA/5 overflow-hidden transition hover:border-goldA/50 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-200">
+                <div
+                    class="absolute top-4 right-4 bg-goldB text-black text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+                    Most Exclusive</div>
+                <div
+                    class="aspect-[4/5] bg-black/40 flex items-center justify-center p-8 grayscale hover:grayscale-0 transition duration-500">
+                    <i class="fa-solid fa-layer-group text-6xl text-goldB/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold">5.5 BHK Duplex</h3>
+                    <p class="mt-2 text-sm text-white/60">360° Vision • Double Height Living</p>
+                    <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="font-semibold">~12,600 Sq. Ft.</span>
+                        <a href="#contact" class="text-goldB text-sm font-bold hover:underline">Request Layout</a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="rounded-3xl border border-white/10 bg-white/5 overflow-hidden transition hover:border-goldA/40 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-300">
+                <div
+                    class="aspect-[4/5] bg-black/40 flex items-center justify-center p-8 grayscale hover:grayscale-0 transition duration-500">
+                    <i class="fa-solid fa-crown text-6xl text-goldA/20"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold">Ultra-Luxe Penthouse</h3>
+                    <p class="mt-2 text-sm text-white/60">Signature Living • Private Sky Deck</p>
+                    <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="font-semibold">~13,500 Sq. Ft.</span>
+                        <a href="#contact" class="text-goldB text-sm font-bold hover:underline">Request Layout</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
-        <div class="flex items-end justify-between">
-            <div>
-                <h2 class="text-2xl sm:text-3xl font-extrabold">Gallery</h2>
-                <p class="mt-2 text-white/70">A quick glimpse into the aesthetic. Replace with official renders/photos.
-                </p>
+    <!-- Price List -->
+    <section id="price-list" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div
+            class="rounded-[2.5rem] border border-goldA/20 bg-gradient-to-br from-white/5 to-transparent p-8 sm:p-12 overflow-hidden relative animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-goldB/5 blur-[100px] pointer-events-none"></div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold">Exclusive Pricing</h2>
+                    <p class="mt-4 text-white/70 leading-relaxed">
+                        Secure your piece of the sky. Competitive pricing for the most prestigious address on the Dwarka
+                        Expressway.
+                    </p>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-center gap-4 text-sm text-white/80">
+                            <i class="fa-solid fa-check-circle text-goldB"></i>
+                            <span>Interest-free payment plans available</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm text-white/80">
+                            <i class="fa-solid fa-check-circle text-goldB"></i>
+                            <span>Special launch benefits for Phase 2</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm text-white/80">
+                            <i class="fa-solid fa-check-circle text-goldB"></i>
+                            <span>All-inclusive transparent pricing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black/40 rounded-3xl border border-white/10 overflow-hidden divide-y divide-white/5">
+                    <div class="p-6 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs text-goldA uppercase tracking-widest font-bold">5.5 BHK Simplex</div>
+                            <div class="mt-1 font-semibold">6,300 Sq. Ft.</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold">₹19.84 Cr*</div>
+                            <div class="text-[10px] text-white/40">Starting Price</div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs text-goldA uppercase tracking-widest font-bold">5.5 BHK Duplex</div>
+                            <div class="mt-1 font-semibold">12,600 Sq. Ft.</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold">₹39.68 Cr*</div>
+                            <div class="text-[10px] text-white/40">Starting Price</div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex items-center justify-between bg-goldA/5">
+                        <div>
+                            <div class="text-xs text-goldB uppercase tracking-widest font-bold">Penthouses</div>
+                            <div class="mt-1 font-semibold">13,500 Sq. Ft.</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-goldB">₹42.86 Cr*</div>
+                            <div class="text-[10px] text-white/40">On Request</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="#contact"
+                            class="flex items-center justify-center w-full py-4 rounded-2xl bg-goldB text-black font-bold shadow-glow hover:brightness-110 transition">
+                            Download Complete Price List
+                        </a>
+                        <p class="mt-3 text-center text-[10px] text-white/30 italic">*Govt. charges, GST & other fees
+                            extra as applicable.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <!-- Replace these with your real images -->
-            <img class="h-56 w-full object-cover rounded-2xl border border-white/10" loading="lazy"
-                src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1400&q=80"
-                alt="Gallery 1 placeholder" />
-            <img class="h-56 w-full object-cover rounded-2xl border border-white/10" loading="lazy"
-                src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=80"
-                alt="Gallery 2 placeholder" />
-            <img class="h-56 w-full object-cover rounded-2xl border border-white/10" loading="lazy"
-                src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2f7e?auto=format&fit=crop&w=1400&q=80"
-                alt="Gallery 3 placeholder" />
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10">
-            <h2 class="text-2xl sm:text-3xl font-extrabold">FAQs</h2>
-            <div class="mt-8 grid lg:grid-cols-2 gap-5">
-                <details class="group rounded-2xl border border-white/10 bg-black/30 p-5">
-                    <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">
-                        Where is Aero One located?
-                        <span class="text-goldB group-open:rotate-180 transition">▾</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-white/70">
-                        The project is marketed in Sector 37D, Gurugram (Village Harsaru). Always verify the latest
-                        location details through official documents / RERA.
-                    </p>
-                </details>
-
-                <details class="group rounded-2xl border border-white/10 bg-black/30 p-5">
-                    <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">
-                        What should I verify before booking?
-                        <span class="text-goldB group-open:rotate-180 transition">▾</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-white/70">
-                        Ask for RERA details, unit configuration, floor plans, payment schedule, possession timelines,
-                        and any applicable charges. Verify everything in writing.
-                    </p>
-                </details>
-
-                <details class="group rounded-2xl border border-white/10 bg-black/30 p-5">
-                    <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">
-                        How do I schedule a site visit?
-                        <span class="text-goldB group-open:rotate-180 transition">▾</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-white/70">
-                        Use the enquiry form below. A representative can share available slots, pricing, and the latest
-                        brochure.
-                    </p>
-                </details>
-
-                <details class="group rounded-2xl border border-white/10 bg-black/30 p-5">
-                    <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">
-                        Is the ceiling height really ~13.5 ft?
-                        <span class="text-goldB group-open:rotate-180 transition">▾</span>
-                    </summary>
-                    <p class="mt-3 text-sm text-white/70">
-                        Some marketing material mentions ~13.5 ft. Treat it as indicative and confirm for the exact
-                        unit/type you’re considering.
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
-        <div class="grid lg:grid-cols-2 gap-8 items-start">
-            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10">
-                <h2 class="text-2xl sm:text-3xl font-extrabold">Request Price, Brochure & Call Back</h2>
-                <p class="mt-2 text-white/70">
-                    Share your details and we’ll get back with availability, pricing, and the latest updates.
-                </p>
-
-                <form id="leadForm" class="mt-8 grid gap-4">
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="text-sm text-white/70">Full Name</label>
-                            <input
-                                class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 outline-none focus:ring-2 focus:ring-goldB/60"
-                                name="name" placeholder="Your name" required />
-                        </div>
-                        <div>
-                            <label class="text-sm text-white/70">Phone</label>
-                            <input
-                                class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 outline-none focus:ring-2 focus:ring-goldB/60"
-                                name="phone" placeholder="e.g. +91 XXXXX XXXXX" required />
-                        </div>
-                    </div>
-
+        <!-- Location -->
+        <section id="location" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+            <div
+                class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                     <div>
-                        <label class="text-sm text-white/70">Email</label>
-                        <input type="email"
-                            class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 outline-none focus:ring-2 focus:ring-goldB/60"
-                            name="email" placeholder="you@example.com" required />
+                        <h2 class="text-2xl sm:text-3xl font-extrabold">Prime Connectivity</h2>
+                        <p class="mt-2 text-white/70 max-w-2xl">
+                            Strategically located in Sector 37D, the heart of New Gurugram's growth corridor.
+                        </p>
                     </div>
-
-                    <div>
-                        <label class="text-sm text-white/70">What are you looking for?</label>
-                        <select
-                            class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 outline-none focus:ring-2 focus:ring-goldB/60"
-                            name="intent">
-                            <option>Price & Payment Plan</option>
-                            <option>Brochure & Floor Plans</option>
-                            <option>Site Visit Scheduling</option>
-                            <option>Investment Consultation</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="text-sm text-white/70">Message (optional)</label>
-                        <textarea
-                            class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 outline-none focus:ring-2 focus:ring-goldB/60"
-                            name="message" rows="4"
-                            placeholder="Any preference: budget, unit type, timeline..."></textarea>
-                    </div>
-
-                    <button type="submit"
+                    <a href="#contact"
                         class="rounded-xl bg-goldB px-5 py-3 font-semibold text-black shadow-glow hover:brightness-110 transition">
-                        Submit Enquiry
-                    </button>
-
-                    <p id="formMsg" class="text-sm text-white/70"></p>
-
-                    <p class="text-xs text-white/45">
-                        By submitting, you agree to be contacted regarding this project. Your information is kept
-                        confidential.
-                    </p>
-                </form>
-            </div>
-
-            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10">
-                <h3 class="text-xl font-extrabold">Quick Details</h3>
-
-                <div class="mt-6 grid gap-4 text-sm">
-                    <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
-                        <div class="text-goldA font-semibold">Project</div>
-                        <div class="mt-1 text-white/75">Aero One, Gurugram (Sector 37D)</div>
-                    </div>
-
-                    <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
-                        <div class="text-goldA font-semibold">Connectivity</div>
-                        <div class="mt-1 text-white/75">Dwarka Expressway corridor (as marketed)</div>
-                    </div>
-
-                    <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
-                        <div class="text-goldA font-semibold">Verification</div>
-                        <div class="mt-1 text-white/75">Check Haryana RERA listing & official documents</div>
-                    </div>
-
-                    <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
-                        <div class="text-goldA font-semibold">Contact</div>
-                        <div class="mt-1 text-white/75">Sales Team: +91 XXXXX XXXXX</div>
-                        <div class="text-white/60 text-xs mt-1">Replace with your official numbers & email.</div>
-                    </div>
-                </div>
-
-                <div class="mt-8 rounded-3xl border border-goldA/25 bg-goldA/10 p-6">
-                    <div class="text-goldB font-semibold">Need a brochure PDF button?</div>
-                    <p class="mt-2 text-sm text-white/70">
-                        Add a brochure link here, or integrate your backend to email PDFs automatically after form
-                        submit.
-                    </p>
-                    <a href="#"
-                        class="mt-4 inline-flex rounded-xl border border-goldB/40 bg-black/40 px-4 py-2 text-sm font-semibold text-goldB hover:bg-white/5 transition">
-                        Download Brochure (Link)
+                        <i class="fa-solid fa-map-location-dot mr-1"></i> Get Location Map
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/10 bg-black">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                <div>
-                    <div class="font-semibold">Aero One • Gurugram</div>
-                    <div class="text-xs text-white/55 mt-1">
-                        Project info is indicative. Verify all details from official sources / RERA before booking.
+                <div class="mt-8 grid lg:grid-cols-3 gap-5">
+                    <div class="rounded-2xl border border-white/10 bg-black/30 p-5">
+                        <div class="text-goldA font-semibold"><i class="fa-solid fa-train-subway mr-1"></i> 5 Mins</div>
+                        <p class="mt-2 text-sm text-white/70">
+                            To upcoming Global City and Metro Station.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-black/30 p-5">
+                        <div class="text-goldA font-semibold"><i class="fa-solid fa-plane-departure mr-1"></i> 15 Mins
+                        </div>
+                        <p class="mt-2 text-sm text-white/70">
+                            To IGI Airport via Dwarka Expressway.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-black/30 p-5">
+                        <div class="text-goldA font-semibold"><i class="fa-solid fa-building mr-1"></i> 20 Mins</div>
+                        <p class="mt-2 text-sm text-white/70">
+                            To Cyber City and Ambience Mall.
+                        </p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="flex items-center gap-5 text-sm text-white/70">
-                    <a class="hover:text-goldB transition" href="#highlights">Highlights</a>
-                    <a class="hover:text-goldB transition" href="#amenities">Amenities</a>
-                    <a class="hover:text-goldB transition" href="#contact">Contact</a>
+        <!-- Gallery (Swiper) -->
+        <section id="gallery" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+            <div
+                class="flex items-end justify-between animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out mb-8">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold">Gallery</h2>
+                    <p class="mt-2 text-white/70">A glimpse into the Aero One lifestyle.</p>
+                </div>
+                <!-- Custom Navigation Buttons -->
+                <div class="flex gap-2">
+                    <button
+                        class="swiper-btn-prev p-2 rounded-full border border-white/20 hover:border-goldB text-white/50 hover:text-goldB transition">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button
+                        class="swiper-btn-next p-2 rounded-full border border-white/20 hover:border-goldB text-white/50 hover:text-goldB transition">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
+
+            <!-- Swiper Container -->
+            <div
+                class="swiper mySwiper w-full rounded-2xl border border-white/10 animate-on-scroll opacity-0 scale-95 transition-all duration-1000 ease-out">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1: Image -->
+                    <div class="swiper-slide h-[300px] sm:h-[500px] bg-black">
+                        <img src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?q=80&w=1400&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-90" alt="Living Room" loading="lazy" />
+                        <div
+                            class="absolute bottom-5 left-5 bg-black/50 backdrop-blur px-4 py-2 rounded-lg text-sm border-l-2 border-goldB">
+                            Spacious Living Areas
+                        </div>
+                    </div>
+                    <!-- Slide 2: Video -->
+                    <div class="swiper-slide h-[300px] sm:h-[500px] bg-black flex items-center justify-center">
+                        <video class="w-full h-full object-cover opacity-90" autoplay loop muted playsinline>
+                            <source src="https://videos.pexels.com/video-files/3209211/3209211-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div
+                            class="absolute bottom-5 left-5 bg-black/50 backdrop-blur px-4 py-2 rounded-lg text-sm border-l-2 border-goldB">
+                            Walkthrough Experience
+                        </div>
+                    </div>
+                    <!-- Slide 3: Image -->
+                    <div class="swiper-slide h-[300px] sm:h-[500px] bg-black">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-90" alt="Master Bedroom" loading="lazy" />
+                        <div
+                            class="absolute bottom-5 left-5 bg-black/50 backdrop-blur px-4 py-2 rounded-lg text-sm border-l-2 border-goldB">
+                            Master Suites
+                        </div>
+                    </div>
+                    <!-- Slide 4: Image -->
+                    <div class="swiper-slide h-[300px] sm:h-[500px] bg-black">
+                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfe1?q=80&w=1400&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-90" alt="Luxury Bathroom" loading="lazy" />
+                        <div
+                            class="absolute bottom-5 left-5 bg-black/50 backdrop-blur px-4 py-2 rounded-lg text-sm border-l-2 border-goldB">
+                            Premium Fittings
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+            <div
+                class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+                <h2 class="text-2xl sm:text-3xl font-extrabold">FAQs</h2>
+                <div class="mt-8 grid lg:grid-cols-2 gap-5">
+                    <details class="group rounded-2xl border border-white/10 bg-black/30 p-5">
+                        <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">
+                            Who is the developer of Aero One?
+                            <span class="text-goldB group-open:rotate-180 transition"><i
+                                    class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="mt-3 text-sm text-white/70">
+                            MVN Infrastructure is the developer, known for creating ultra-luxury educational and
+                            residential
+                            landmarks.
+                        </p>
+                    </details>
+
+                    <details class="group rounded-2xl border border-white/10 bg-black/30 p-5">
+                        <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">
+                            What are the unit sizes?
+                            <span class="text-goldB group-open:rotate-180 transition"><i
+                                    class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="mt-3 text-sm text-white/70">
+                            The project offers 5.5 BHK apartments ranging from 6300 Sq. Ft. to 13500 Sq. Ft. penthouses.
+                        </p>
+                    </details>
+
+                    <details class="group rounded-2xl border border-white/10 bg-black/30 p-5">
+                        <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">
+                            Where exactly is it located?
+                            <span class="text-goldB group-open:rotate-180 transition"><i
+                                    class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="mt-3 text-sm text-white/70">
+                            It is located in Sector 37D, Gurugram, directly on the Dwarka Expressway.
+                        </p>
+                    </details>
+
+                    <details class="group rounded-2xl border border-white/10 bg-black/30 p-5">
+                        <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">
+                            Is the project RERA registered?
+                            <span class="text-goldB group-open:rotate-180 transition"><i
+                                    class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="mt-3 text-sm text-white/70">
+                            Yes, the project is registered with Haryana RERA (GGM/889/621/2024/116).
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
+            <div class="grid lg:grid-cols-2 gap-8 items-start">
+                <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10 animate-on-scroll opacity-0 translate-x-[-20px] transition-all duration-1000 ease-out">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold">Book Your Site Visit</h2>
+                    <p class="mt-2 text-white/70">
+                        Register your interest for MVN Aero One.
+                    </p>
+
+                    <form id="leadForm" class="mt-8 grid gap-4" onsubmit="handleFormSubmit(event)">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-sm text-white/70">Full Name</label>
+                                <input
+                                    class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 outline-none focus:ring-2 focus:ring-goldB/60"
+                                    name="name" placeholder="Name" required />
+                            </div>
+                            <div>
+                                <label class="text-sm text-white/70">Phone</label>
+                                <div
+                                    class="mt-2 flex w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 focus-within:ring-2 focus-within:ring-goldB/60">
+                                    <span class="text-white/50 border-r border-white/10 pr-3 select-none">+91</span>
+                                    <input
+                                        class="w-full bg-transparent pl-3 outline-none text-white placeholder-white/30"
+                                        type="tel" name="phone" placeholder="XXXXXXXXXX" pattern="\d*" maxlength="10"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-sm text-white/70">Email</label>
+                            <input type="email"
+                                class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 outline-none focus:ring-2 focus:ring-goldB/60"
+                                name="email" placeholder="Email" required />
+                        </div>
+
+                        <div>
+                            <label class="text-sm text-white/70">Interest</label>
+                            <select
+                                class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 outline-none focus:ring-2 focus:ring-goldB/60 bg-black"
+                                name="intent">
+                                <option>Schedule Site Visit</option>
+                                <option>Request Price Sheet</option>
+                                <option>Download Brochure</option>
+                                <option>Call Back</option>
+                            </select>
+                        </div>
+
+                        <button type="submit"
+                            class="rounded-xl bg-goldB px-5 py-3 font-semibold text-black shadow-glow hover:brightness-110 transition">
+                            Submit Enquiry <i class="fa-solid fa-paper-plane ml-1"></i>
+                        </button>
+                        <p class="text-xs text-white/45 mt-2">
+                            <i class="fa-solid fa-lock mr-1"></i> We respect your privacy.
+                        </p>
+                    </form>
+                </div>
+
+                <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10 animate-on-scroll opacity-0 translate-x-[20px] transition-all duration-1000 ease-out delay-200">
+                    <h3 class="text-xl font-extrabold">Project Summary</h3>
+
+                    <div class="mt-6 grid gap-4 text-sm">
+                        <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+                            <div class="text-goldA font-semibold"><i class="fa-solid fa-location-arrow mr-1"></i>
+                                Address
+                            </div>
+                            <div class="mt-1 text-white/75">Sector 37D, Dwarka Expressway, Gurugram</div>
+                        </div>
+
+                        <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+                            <div class="text-goldA font-semibold"><i class="fa-solid fa-helmet-safety mr-1"></i> Status
+                            </div>
+                            <div class="mt-1 text-white/75">Under Construction (Possession by 2029)</div>
+                        </div>
+
+                        <div class="rounded-2xl border border-white/10 bg-black/30 p-4">
+                            <div class="text-goldA font-semibold"><i class="fa-solid fa-headset mr-1"></i> Sales Support
+                            </div>
+                            <div class="mt-1 text-white/75">+91 99999 99999</div>
+                            <div class="text-white/60 text-xs mt-1">Available 10 AM - 7 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-white/10 bg-black">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                    <div>
+                        <div class="font-semibold text-goldA">MVN Aero One</div>
+                        <div class="text-xs text-white/55 mt-1">
+                            Disclaimer: The content is for information purposes only and does not constitute an offer to
+                            avail of any service. Prices mentioned are subject to change without notice and properties
+                            mentioned are subject to availability.
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-5 text-sm text-white/70">
+                        <a class="hover:text-goldB transition" href="#highlights">Highlights</a>
+                        <a class="hover:text-goldB transition" href="#amenities">Amenities</a>
+                        <a class="hover:text-goldB transition" href="#floor-plans">Floor Plans</a>
+                        <a class="hover:text-goldB transition" href="#price-list">Price List</a>
+                        <a class="hover:text-goldB transition" href="#contact">Contact</a>
+                        <div class="flex gap-4 ml-4">
+                            <a href="#" class="hover:text-goldB transition"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="hover:text-goldB transition"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="hover:text-goldB transition"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Popup Modal -->
+        <div id="popupModal"
+            class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity duration-300">
+            <div class="relative w-full max-w-lg overflow-hidden rounded-3xl border border-goldA/30 bg-[#0F0F0F] shadow-2xl scale-95 opacity-0 transition-all duration-300 transform"
+                id="popupContent">
+
+                <button id="closePopup" class="absolute top-4 right-4 text-white/50 hover:text-white">
+                    <i class="fa-solid fa-times text-xl"></i>
+                </button>
+
+                <div class="p-8">
+                    <div class="text-center mb-6">
+                        <div
+                            class="inline-block px-3 py-1 rounded-full bg-goldA/10 text-goldA text-xs font-semibold mb-3">
+                            Limited Inventory</div>
+                        <h3 class="text-2xl font-bold">Get in touch</h3>
+                        <p class="text-white/70 mt-2 text-sm">Fill the form to access the Phase 2 pricing and floor
+                            plans.
+                        </p>
+                    </div>
+
+                    <form class="grid gap-4" onsubmit="handleFormSubmit(event)">
+                        <input type="text" name="name" placeholder="Name" required
+                            class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white placeholder-white/40 focus:border-goldB focus:outline-none" />
+
+                        <div
+                            class="flex w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 focus-within:border-goldB">
+                            <span class="text-white/50 border-r border-white/10 pr-3 select-none">+91</span>
+                            <input class="w-full bg-transparent pl-3 outline-none text-white placeholder-white/30"
+                                type="tel" name="phone" placeholder="XXXXXXXXXX" pattern="\d*" maxlength="10"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
+                        </div>
+
+                        <input type="email" name="email" placeholder="Email" required
+                            class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white placeholder-white/40 focus:border-goldB focus:outline-none" />
+
+                        <select
+                            class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white/70 focus:border-goldB focus:outline-none bg-[#0F0F0F]"
+                            name="intent">
+                            <option>Request Price Sheet</option>
+                            <option>Schedule Site Visit</option>
+                            <option>Download Brochure</option>
+                        </select>
+
+                        <button type="submit"
+                            class="w-full rounded-xl bg-goldB py-3 font-semibold text-black shadow-glow hover:brightness-110 transition">
+                            Get in touch
+                        </button>
+                        <p class="text-center text-xs text-white/30">Immediate callback guaranteed.</p>
+                    </form>
+                </div>
+                <!-- Decorative -->
+                <div class="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-goldB/5 blur-2xl"></div>
+                <div class="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-goldA/5 blur-2xl"></div>
+            </div>
         </div>
-    </footer>
 
-    <!-- JS: Mobile menu + Smooth scroll + basic form UX -->
-    <script>
-        const menuBtn = document.getElementById("menuBtn");
-        const mobileNav = document.getElementById("mobileNav");
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-        if (menuBtn && mobileNav) {
-            menuBtn.addEventListener("click", () => {
-                const isOpen = !mobileNav.classList.contains("hidden");
-                mobileNav.classList.toggle("hidden");
-                menuBtn.setAttribute("aria-expanded", String(!isOpen));
+        <!-- JS -->
+        <script>
+            // Init Swiper
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-btn-next",
+                    prevEl: ".swiper-btn-prev",
+                },
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
             });
 
-            // Close menu when clicking a link
-            mobileNav.querySelectorAll("a").forEach((a) => {
-                a.addEventListener("click", () => mobileNav.classList.add("hidden"));
+            // Menu Toggle
+            const menuBtn = document.getElementById("menuBtn");
+            const mobileNav = document.getElementById("mobileNav");
+            if (menuBtn && mobileNav) {
+                menuBtn.addEventListener("click", () => {
+                    const isOpen = !mobileNav.classList.contains("hidden");
+                    mobileNav.classList.toggle("hidden");
+                    menuBtn.setAttribute("aria-expanded", String(!isOpen));
+                    // Toggle Icon
+                    menuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-bars text-lg"></i>' : '<i class="fa-solid fa-times text-lg"></i>';
+                });
+                mobileNav.querySelectorAll("a").forEach((a) => {
+                    a.addEventListener("click", () => mobileNav.classList.add("hidden"));
+                });
+            }
+
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    const targetId = this.getAttribute("href");
+                    if (!targetId || targetId === "#") return;
+                    const el = document.querySelector(targetId);
+                    if (!el) return;
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                });
             });
-        }
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener("click", function (e) {
-                const targetId = this.getAttribute("href");
-                if (!targetId || targetId === "#") return;
+            // Intersection Observer for Animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-                const el = document.querySelector(targetId);
-                if (!el) return;
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'translate-y-8', 'translate-x-8', 'translate-x-[-20px]', 'translate-x-[20px]', 'scale-95');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-                e.preventDefault();
-                el.scrollIntoView({ behavior: "smooth", block: "start" });
+            document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+                observer.observe(el);
             });
-        });
 
-        // Form: demo submit (replace with your API)
-        const leadForm = document.getElementById("leadForm");
-        const formMsg = document.getElementById("formMsg");
+            // Popup Logic
+            const popupModal = document.getElementById('popupModal');
+            const popupContent = document.getElementById('popupContent');
+            const closePopupBtn = document.getElementById('closePopup');
 
-        if (leadForm) {
-            leadForm.addEventListener("submit", async (e) => {
-                e.preventDefault();
-
-                const fd = new FormData(leadForm);
-                const payload = Object.fromEntries(fd.entries());
-
-                // Basic validation
-                if (!payload.name || !payload.phone || !payload.email) {
-                    formMsg.textContent = "Please fill in name, phone, and email.";
-                    formMsg.className = "text-sm text-red-400";
-                    return;
+            function openPopup() {
+                if (popupModal.classList.contains('hidden')) {
+                    popupModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        popupContent.classList.remove('scale-95', 'opacity-0');
+                        popupContent.classList.add('scale-100', 'opacity-100');
+                    }, 10);
                 }
+            }
 
-                // Demo success
-                formMsg.textContent = "Thanks! We’ve received your enquiry. Our team will contact you shortly.";
-                formMsg.className = "text-sm text-green-400";
-                leadForm.reset();
+            function closePopup() {
+                popupContent.classList.remove('scale-100', 'opacity-100');
+                popupContent.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    popupModal.classList.add('hidden');
+                }, 300);
+            }
 
-                // Example API call (uncomment and set your endpoint):
-                // try {
-                //   const res = await fetch("/api/leads", {
-                //     method: "POST",
-                //     headers: { "Content-Type": "application/json" },
-                //     body: JSON.stringify(payload),
-                //   });
-                //   const data = await res.json();
-                //   if (!res.ok) throw new Error(data?.message || "Failed");
-                // } catch (err) {
-                //   formMsg.textContent = err.message || "Something went wrong.";
-                //   formMsg.className = "text-sm text-red-400";
-                // }
+            closePopupBtn.addEventListener('click', closePopup);
+
+            // Close on backdrop click
+            popupModal.addEventListener('click', (e) => {
+                if (e.target === popupModal) {
+                    closePopup();
+                }
             });
-        }
-    </script>
+
+            setInterval(openPopup, 30000);
+
+            // Form Handling
+            function handleFormSubmit(event) {
+                event.preventDefault();
+                // Validate Phone manually if needed, though pattern/maxlength handle most
+                // Redirect
+                window.location.href = 'Thankyou.html';
+            }
+
+        </script>
 </body>
 
 </html>
