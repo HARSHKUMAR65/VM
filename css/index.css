@@ -1,0 +1,47 @@
+
+        .bg-luxe {
+            background:
+                radial-gradient(60rem 60rem at 10% 10%, rgba(215, 173, 56, 0.10), transparent 60%),
+                radial-gradient(40rem 40rem at 90% 30%, rgba(206, 163, 118, 0.12), transparent 55%),
+                linear-gradient(to bottom, #000000, #0b0b0b 40%, #000000);
+        }
+
+        .grid-overlay {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b0b0b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cea376;
+        }
+
+        /* Swiper Customization */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #d7ad38 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #d7ad38 !important;
+        }
