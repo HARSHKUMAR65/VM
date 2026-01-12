@@ -11,10 +11,8 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <script>
         tailwind.config = {
             theme: {
@@ -816,7 +814,8 @@
             <div class="relative w-full max-w-lg overflow-hidden rounded-3xl border border-goldA/30 bg-[#0F0F0F] shadow-2xl scale-95 opacity-0 transition-all duration-300 transform"
                 id="popupContent">
 
-                <button id="closePopup" class="absolute top-4 right-4 text-white/50 hover:text-white">
+                <button id="closePopup" type="button"
+                    class="absolute top-4 right-4 text-white/50 hover:text-white" aria-label="Close popup">
                     <i class="fa-solid fa-times text-xl"></i>
                 </button>
 
@@ -884,7 +883,7 @@
                     prevEl: ".swiper-btn-prev",
                 },
                 autoplay: {
-                    delay: 4000,
+                    delay: 1000,
                     disableOnInteraction: false,
                 },
             });
@@ -955,20 +954,35 @@
             function closePopup() {
                 popupContent.classList.remove('scale-100', 'opacity-100');
                 popupContent.classList.add('scale-95', 'opacity-0');
-                setTimeout(() => {
-                    popupModal.classList.add('hidden');
-                }, 300);
+                                    popupModal.classList.add('hidden');
+                // setTimeout(() => {
+                //                         popupModal.classList.add('hidden');
+
+                // }, 300);
             }
 
-            closePopupBtn.addEventListener('click', closePopup);
+            if (closePopupBtn) {
+                closePopupBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closePopup();
+                });
+            }
 
             // Close on backdrop click
-            popupModal.addEventListener('click', (e) => {
-                if (e.target === popupModal) {
-                    closePopup();
-                }
-            });
+            if (popupModal) {
+                popupModal.addEventListener('click', (e) => {
+                    console.log(e.target);
+                    console.log(popupModal);
+                    if (e.target === popupModal) {
 
+                        console.log('clicked');
+                        closePopup();
+                    }
+                });
+            }
+
+            window.openPopup = openPopup;
+            window.closePopup = closePopup;
             setInterval(openPopup, 30000);
 
             // Form Handling
